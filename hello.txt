@@ -1,0 +1,5 @@
+File: hello.txt
+Access: -rw-r--r--
+Size(B): 5448
+Owner: xenonstack
+Modify: 2020-10-07 20:34:44.616123431 +0530

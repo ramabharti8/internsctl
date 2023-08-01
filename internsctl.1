@@ -1,0 +1,126 @@
+.TH INTERNSCTL 1 "AUGUST 2023"
+.SH NAME
+internsctl \- custom Linux command for various operations
+
+.SH SYNOPSIS
+.B internsctl
+[\fIOPTION\fR]
+[\fBCOMMAND\fR]
+[\fIARGUMENTS\fR]
+
+.SH DESCRIPTION
+.B internsctl
+is a custom Linux command that provides various operations for system information and user management.
+
+.SH OPTIONS
+.TP
+.BR --help, -h
+Show the help message for the command.
+.TP
+.BR --version
+Show the version of the \fBinternsctl\fR command.
+.SH COMMANDS 
+The available \fIcommands\fR for the \fBinternsctl\fR command are as follows:
+.TP
+.BR cpu getinfo
+Get CPU information of the server.
+.TP
+.BR memory getinfo
+Get memory information of the server.
+.TP
+.BR user create  \fR\fIusername\fR
+Create a new user with the given \fIusername\fR. The user can log in to the Linux system and access their home directory.
+.TP
+.BR user list
+List all regular users present on the server.
+.TP
+.BR user list --sudo-only
+List all users with sudo permissions on the server.
+.TP
+.BR file getinfo \fR\fIfile-name\fR [\fIoptions\fR]
+Get information aboutr a file with the given \fIfile-name\fR. Additional \fIoptions\fR can be provided to obtain specific information about the  file.
+
+.SH FILE INFORMATION OPTIONS 
+The following \fIoptions\fR can be used with the \fBfile getinfo\fR command to obtain specific information about a file:
+.TP
+.BR --size, -s
+Print the size of the specified file only.
+.TP
+.BR --permissions, -p
+Print the file permissions of the specified file.
+.TP
+.BR --owner, -o
+Print the owner of the specified file.
+.TP
+.BR --last-modified, -m
+Print the last modified time of the specified file.
+
+.SH EXAMPLES 
+.TP
+\fBExample 1:\fR Get CPU informtion
+.PP
+.nf
+.B internsctl cpu getinfo
+.fi
+.TP
+\fBExample 2:\fR Get memory information
+.PP
+.nf
+.B internsctl memory getinfo
+.fi
+.TP
+\fBExample 3:\fR Create a new user 
+.PP
+.nf
+.B internsctl user create john
+.fi
+.TP
+\fBExample 4:\fR List all regular users:
+.PP
+.nf
+.B internsctl user list
+.fi
+.TP
+\fBExample 5:\fR List all users with sudo permissions:
+.PP
+.nf
+.B internsctl user list --sudo-only
+.fi
+.TP
+\fBExample 6:\fR Get information about a file named "hello.txt":
+.PP
+.nf
+.B internsctl file getinfo hello.txt
+.fi
+
+.SH EXAMPLES FOR FILE COMMAND WITH OPTIONS
+.TP
+\fBExample 1:\fR Get the size of the file "hello.txt":
+.PP
+.nf
+.B nternsctl file getinfo --size hello.txt
+.fi
+.TP
+\fBExample 2:\fR Get the permissions of the file "hello.txt":
+.PP
+.nf
+.B internsctl file getinfo --permissions hello.txt
+.fi
+.TP
+\fBExample 3:\fR Get the owner of the file "hello.txt":
+.PP
+.nf
+.B internsctl file getinfo --owner hello.txt
+.fi
+.TP
+\fBExample 4:\fR Get the last modified time of the file "hello.txt":
+.PP
+.nf
+.B internsctl file getinfo --last -modified hello.txt
+.fi
+
+.SH AUTHOR
+Written by YourName.
+.SH COPYRIGHT
+Copyright (c) YourName. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law. 
+
